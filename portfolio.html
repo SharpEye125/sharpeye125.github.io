@@ -1,0 +1,211 @@
+<!doctype html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Malachi Portfolio</title><meta name="keywords" content="tri-tech, malachi, video editor, portfolio">
+<link href="stylesheet.css" rel="stylesheet" type="text/css">
+<script type="text/javascript">
+function MM_swapImgRestore() { //v3.0
+  var i,x,a=document.MM_sr; for(i=0;a&&i<a.length&&(x=a[i])&&x.oSrc;i++) x.src=x.oSrc;
+}
+function MM_preloadImages() { //v3.0
+  var d=document; if(d.images){ if(!d.MM_p) d.MM_p=new Array();
+    var i,j=d.MM_p.length,a=MM_preloadImages.arguments; for(i=0; i<a.length; i++)
+    if (a[i].indexOf("#")!=0){ d.MM_p[j]=new Image; d.MM_p[j++].src=a[i];}}
+}
+
+function MM_findObj(n, d) { //v4.01
+  var p,i,x;  if(!d) d=document; if((p=n.indexOf("?"))>0&&parent.frames.length) {
+    d=parent.frames[n.substring(p+1)].document; n=n.substring(0,p);}
+  if(!(x=d[n])&&d.all) x=d.all[n]; for (i=0;!x&&i<d.forms.length;i++) x=d.forms[i][n];
+  for(i=0;!x&&d.layers&&i<d.layers.length;i++) x=MM_findObj(n,d.layers[i].document);
+  if(!x && d.getElementById) x=d.getElementById(n); return x;
+}
+
+function MM_swapImage() { //v3.0
+  var i,j=0,x,a=MM_swapImage.arguments; document.MM_sr=new Array; for(i=0;i<(a.length-2);i+=3)
+   if ((x=MM_findObj(a[i]))!=null){document.MM_sr[j++]=x; if(!x.oSrc) x.oSrc=x.src; x.src=a[i+2];}
+}
+</script>
+	<!-- START FANCYBOX -->
+	<!-- Add jQuery library -->
+	<script type="text/javascript" src="fancybox/lib/jquery-1.9.0.min.js"></script>
+
+	<!-- Add mousewheel plugin (this is optional) -->
+	<script type="text/javascript" src="fancybox/lib/jquery.mousewheel-3.0.6.pack.js"></script>
+
+	<!-- Add fancyBox main JS and CSS files -->
+	<script type="text/javascript" src="fancybox/jquery.fancybox.js?v=2.1.4"></script>
+	<link rel="stylesheet" type="text/css" href="fancybox/jquery.fancybox.css?v=2.1.4" media="screen" />
+
+	<!-- Add Button helper (this is optional) -->
+	<link rel="stylesheet" type="text/css" href="fancybox/helpers/jquery.fancybox-buttons.css?v=1.0.5" />
+	<script type="text/javascript" src="fancybox/helpers/jquery.fancybox-buttons.js?v=1.0.5"></script>
+
+	<!-- Add Thumbnail helper (this is optional) -->
+	<link rel="stylesheet" type="text/css" href="fancybox/helpers/jquery.fancybox-thumbs.css?v=1.0.7" />
+	<script type="text/javascript" src="fancybox/helpers/jquery.fancybox-thumbs.js?v=1.0.7"></script>
+
+	<!-- Add Media helper (this is optional) -->
+	<script type="text/javascript" src="fancybox/helpers/jquery.fancybox-media.js?v=1.0.5"></script>
+
+	<script type="text/javascript">
+		$(document).ready(function() {
+			/*
+			 *  Simple image gallery. Uses default settings
+			 */
+
+			$('.fancybox').fancybox();
+
+			/*
+			 *  Different effects
+			 */
+
+			// Change title type, overlay closing speed
+			$(".fancybox-effects-a").fancybox({
+				helpers: {
+					title : {
+						type : 'outside'
+					},
+					overlay : {
+						speedOut : 0
+					}
+				}
+			});
+
+			// Disable opening and closing animations, change title type
+			$(".fancybox-effects-b").fancybox({
+				openEffect  : 'none',
+				closeEffect	: 'none',
+
+				helpers : {
+					title : {
+						type : 'over'
+					}
+				}
+			});
+
+			// Set custom style, close if clicked, change title type and overlay color
+			$(".fancybox-effects-c").fancybox({
+				wrapCSS    : 'fancybox-custom',
+				closeClick : true,
+
+				openEffect : 'none',
+
+				helpers : {
+					title : {
+						type : 'inside'
+					},
+					overlay : {
+						css : {
+							'background' : 'rgba(238,238,238,0.85)'
+						}
+					}
+				}
+			});
+
+			// Remove padding, set opening and closing animations, close if clicked and disable overlay
+			$(".fancybox-effects-d").fancybox({
+				padding: 0,
+
+				openEffect : 'elastic',
+				openSpeed  : 150,
+
+				closeEffect : 'elastic',
+				closeSpeed  : 150,
+
+				closeClick : true,
+
+				helpers : {
+					overlay : null
+				}
+			});
+
+			/*
+			 *  Button helper. Disable animations, hide close button, change title type and content
+			 */
+
+			$('.fancybox-buttons').fancybox({
+				openEffect  : 'none',
+				closeEffect : 'none',
+
+				prevEffect : 'none',
+				nextEffect : 'none',
+
+				closeBtn  : false,
+
+				helpers : {
+					title : {
+						type : 'inside'
+					},
+					buttons	: {}
+				},
+
+				afterLoad : function() {
+					this.title = 'Image ' + (this.index + 1) + ' of ' + this.group.length + (this.title ? ' - ' + this.title : '');
+				}
+			});
+
+
+			/*
+			 *  Thumbnail helper. Disable animations, hide close button, arrows and slide to next gallery item if clicked
+			 */
+
+			$('.fancybox-thumbs').fancybox({
+				prevEffect : 'none',
+				nextEffect : 'none',
+
+				closeBtn  : false,
+				arrows    : false,
+				nextClick : true,
+
+				helpers : {
+					thumbs : {
+						width  : 50,
+						height : 50
+					}
+				}
+			});
+
+		});
+	</script>
+   <!-- END FANCYBOX -->
+
+</head>
+
+<body onLoad="MM_preloadImages('assets/home_button_down.png','assets/art_videos_button_down.png','assets/portfolio_button_down.png')">
+<div class="wrapper"><img src="assets/mw_logo.png" width="252" height="147" alt=""/>
+<img src="assets/malachi_weis_text_banner.png" alt="" width="800" height="140"/>
+  <table width="800" align="center" class="nav">
+  <tbody>
+    <tr>
+      <td width="33%" align="right"><a href="index.html" onMouseOut="MM_swapImgRestore()" onMouseOver="MM_swapImage('Home','','assets/buttons/alternate/1_home_button_down.png',1)"><img src="assets/Buttons/Alternate/1_home_button_up.png" alt="Home" width="200" height="37" id="Home"></a></td>
+      <td width="33%" align="center"><a href="art_and_videos.html" onMouseOut="MM_swapImgRestore()" onMouseOver="MM_swapImage('Art and videos','','assets/buttons/alternate/1_art_videos_button_down.png',1)"><img src="assets/Buttons/Alternate/1_art_videos_button_up.png" alt="Art & Videos" width="200" height="37" id="Art and videos"></a></td>
+      <td width="33%" align="left"><a href="portfolio.html" onMouseOut="MM_swapImgRestore()" onMouseOver="MM_swapImage('Portfolio','','assets/buttons/alternate/1_portfolio_button_down.png',1)"><img src="assets/Buttons/Alternate/1_portfolio_button_up.png" alt="Portfolio" width="200" height="37" id="Portfolio"></a></td>
+    </tr>
+  </tbody>
+</table>
+</div>
+<div class="container">
+  <p>Portfolio  </p>
+  <table width="1200">
+    <tbody>
+      <tr>
+        <td align="center"><a class="fancybox-thumbs" data-fancybox-group="thumb" href="assets/portfolio/resume_big_malachi.jpg"><img src="assets/portfolio/resume_small_malachi.jpg" alt="" /></a></td>
+        <td align="center"><a class="fancybox-thumbs" data-fancybox-group="thumb" href="assets/portfolio/job_application_big_malachi.jpg"><img src="assets/portfolio/job_application_small_malachi.jpg" alt="" /></a></td>
+        <td align="center"><a class="fancybox-thumbs" data-fancybox-group="thumb" href="assets/portfolio/cover_letter_big_malachi.jpg"><img src="assets/portfolio/cover_letter_small_malachi.jpg" alt="" /></a></td>
+        <td align="center"><a class="fancybox-thumbs" data-fancybox-group="thumb" href="assets/portfolio/highschool_beyond_plan_big_malachi.jpg"><img src="assets/portfolio/highschool_beyond_plan_small_malachi.jpg" alt="" /></a></td>
+      </tr>
+      <tr>
+        <td align="center"><a href="assets/portfolio/resume_malachi.pdf" target="_blank">Print Resume</a></td>
+        <td align="center"><a href="assets/portfolio/job_application_malachi.pdf" target="_blank">Print Job Applicaton</a></td>
+        <td align="center"><a href="assets/portfolio/cover_letter_malachi.pdf" target="_blank">Print Cover Letter</a></td>
+        <td align="center"><a href="assets/portfolio/highschool_beyond_plan_malachi.pdf" target="_blank">Print Highschool Beyond Plan</a></td>
+      </tr>
+    </tbody>
+  </table>
+  <p>&nbsp;</p>
+  <p>&nbsp;</p>
+</div>
+</body>
+</html>
